@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | Chinni's Construction{% endblock %}
+
+{% block content %}
+<section class="page-header" style="background-image: linear-gradient(rgba(10,20,30,.8),rgba(10,20,30,.85)), url('https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+  <div class="container text-center">
+    <h1 data-aos="fade-up">Our Projects</h1>
+    <p data-aos="fade-up" data-aos-delay="100">A showcase of our completed construction work.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag">Gallery</span>
+      <h2 class="section-title">Project <span class="highlight">Gallery</span></h2>
+      <p class="section-subtitle mx-auto">Browse through our recent construction projects across homes, walls, tanks, and more.</p>
+    </div>
+
+    <div class="project-filters text-center mb-4" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="home">Homes</button>
+      <button class="filter-btn" data-filter="wall">Walls</button>
+      <button class="filter-btn" data-filter="tank">Tanks</button>
+      <button class="filter-btn" data-filter="mason">Mason Work</button>
+    </div>
+
+    <div class="row g-4" id="projectGrid">
+      <div class="col-md-6 col-lg-4 project-item" data-category="home" data-aos="zoom-in">
+        <div class="project-card">
+          <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" alt="2 BHK Home">
+          <div class="project-overlay"><h5>2 BHK Home</h5><span>Vijayawada</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="home" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-card">
+          <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600" alt="3 BHK Home">
+          <div class="project-overlay"><h5>3 BHK Home</h5><span>Rajahmundry</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="wall" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/walls/Muro de Alta Seguridad (1).jpeg') }}" alt="Compound Wall">
+          <div class="project-overlay"><h5>Compound Wall</h5><span>Jangareddygudem</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="tank" data-aos="zoom-in">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/Tanks/Fuel storage tanks stock photo_ Image of safety, derv - 2491028.jpeg') }}" alt="Round Tank">
+          <div class="project-overlay"><h5>Round Tank</h5><span>Eluru</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="mason" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-card">
+          <img src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Plastering Work">
+          <div class="project-overlay"><h5>Plastering Work</h5><span>Gopalapuram</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="home" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/projects/3BHK Modern Dream Home.jpeg') }}" alt="1 BHK Home">
+          <div class="project-overlay"><h5>1 BHK Home</h5><span>Kovvur</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="mason" data-aos="zoom-in">
+        <div class="project-card">
+          <img src="https://images.pexels.com/photos/8961342/pexels-photo-8961342.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Flooring Work">
+          <div class="project-overlay"><h5>Flooring Work</h5><span>Thadepalli Gudem</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="wall" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/walls/download (7).jpeg') }}" alt="Boundary Wall">
+          <div class="project-overlay"><h5>Boundary Wall</h5><span>Athreyapuram</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="wall" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/projects/Don\'t Just List It_ Visualize It_.jpeg') }}" alt="Duplex House">
+          <div class="project-overlay"><h5>Duplex House</h5><span>Rajahmundry</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item" data-category="tank" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/Tanks/Oil tanks for storage stock photo_ Image of heat, port, energy - 63890.jpeg') }}" alt="Storage Tank">
+          <div class="project-overlay"><h5>Storage Tank</h5><span>Sagipadu</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" id="lightboxImg" alt="Project image">
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+{% endblock %}

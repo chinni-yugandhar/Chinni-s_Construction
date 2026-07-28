@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}About Us | Chinni's Construction{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header" style="background-image: linear-gradient(rgba(10,20,30,.8),rgba(10,20,30,.85)), url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+  <div class="container text-center">
+    <h1 data-aos="fade-up">About Us</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Building trust, one structure at a time.</p>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <img src="https://images.pexels.com/photos/8961342/pexels-photo-8961342.jpeg?auto=compress&cs=tinysrgb&w=800" class="img-fluid rounded-3 shadow-lg" alt="Chinni at work">
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">Meet <span class="highlight">Chinni</span></h2>
+        <p class="section-subtitle">Chinni started as a mason over 15 years ago, learning the craft from the ground up. With dedication, hard work, and an eye for quality, he grew from a single worker into a trusted contractor leading a skilled team.</p>
+        <p>Today, Chinni's Construction handles everything from full home construction (1, 2, and 3 BHK) to compound walls, round tanks, Elevations and all types of mason work. We also rent construction materials like centering sticks, iron sheets, boxes, and more.</p>
+        <p>Our mission is simple: deliver honest, high-quality construction work that families and businesses can rely on for generations.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-cta mt-2"><i class="bi bi-chat-dots me-2"></i>Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag">Our Values</span>
+      <h2 class="section-title">What We <span class="highlight">Stand For</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="value-card">
+          <div class="value-icon"><i class="bi bi-shield-check"></i></div>
+          <h4>Integrity</h4>
+          <p>We do what we promise. Transparent pricing, honest timelines, and no shortcuts.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="value-card">
+          <div class="value-icon"><i class="bi bi-gem"></i></div>
+          <h4>Quality</h4>
+          <p>Every brick, every beam, every finish — we hold ourselves to the highest standard.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="value-card">
+          <div class="value-icon"><i class="bi bi-people"></i></div>
+          <h4>Customer First</h4>
+          <p>Your home is your dream. We treat every project as if it were our own.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Stats -->
+<section class="section">
+  <div class="container">
+    <div class="experience-banner" data-aos="fade-up">
+      <div class="row text-center">
+        <div class="col-6 col-md-3"><h3 data-count="15">0</h3><p>Years of Experience</p></div>
+        <div class="col-6 col-md-3"><h3 data-count="250">0</h3><p>Projects Completed</p></div>
+        <div class="col-6 col-md-3"><h3 data-count="180">0</h3><p>Happy Clients</p></div>
+        <div class="col-6 col-md-3"><h3 data-count="20">0</h3><p>Skilled Workers</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}Rent Materials | Chinni's Construction{% endblock %}
+
+{% block content %}
+<section class="page-header" style="background-image: linear-gradient(rgba(10,20,30,.8),rgba(10,20,30,.85)), url('https://images.pexels.com/photos/2098077/pexels-photo-2098077.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+  <div class="container text-center">
+    <h1 data-aos="fade-up">Rent Materials</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Construction equipment and materials available for rent.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag">Rental Equipment</span>
+      <h2 class="section-title">Materials & Equipment <span class="highlight">For Rent</span></h2>
+      <p class="section-subtitle mx-auto">We rent out a variety of construction materials and equipment for your building needs. Contact us for availability and pricing.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Centering Sticks -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="rent-card">
+          <div class="rent-image">
+            <img src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Centering Sticks">
+            <span class="rent-badge">Available</span>
+          </div>
+          <div class="rent-body">
+            <h4>Centering Sticks</h4>
+            <p>High-quality wooden centering sticks for slab and beam support during construction.</p>
+            <div class="rent-footer">
+              <span class="rent-price">Contact for pricing</span>
+              <a href="{{ url_for('enquiry') }}?service=Centering%20Sticks%20Rental">
+    <img src="{{ url_for('static', filename='static/images/rentals/Building Construction.jpeg') }}"
+         alt="Centering Sticks">
+</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Iron Sheets -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="rent-card">
+          <div class="rent-image">
+            <img src="static/images/rentals/download (5).jpeg" alt="Iron Sheets">
+            <span class="rent-badge">Available</span>
+          </div>
+          <div class="rent-body">
+            <h4>Iron Sheets</h4>
+            <p>Durable iron sheets for centering, shuttering, and temporary structures on site.</p>
+            <div class="rent-footer">
+              <span class="rent-price">Contact for pricing</span>
+              <a href="{{ url_for('enquiry') }}?service=Iron%20Sheets%20Rental" class="btn btn-sm btn-cta">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Boxes -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="rent-card">
+          <div class="rent-image">
+            <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Boxes">
+            <span class="rent-badge">Available</span>
+          </div>
+          <div class="rent-body">
+            <h4>Boxes</h4>
+            <p>Shuttering boxes for column and beam casting — strong and reusable.</p>
+            <div class="rent-footer">
+              <span class="rent-price">Contact for pricing</span>
+              <a href="{{ url_for('enquiry') }}?service=Boxes%20Rental" class="btn btn-sm btn-cta">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Gedanchies -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="rent-card">
+          <div class="rent-image">
+            <img src="https://images.pexels.com/photos/8961342/pexels-photo-8961342.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gedanchies">
+            <span class="rent-badge">Available</span>
+          </div>
+          <div class="rent-body">
+            <h4>Gedanchies</h4>
+            <p>Gedanchi equipment for material mixing and construction site use.</p>
+            <div class="rent-footer">
+              <span class="rent-price">Contact for pricing</span>
+              <a href="{{ url_for('enquiry') }}?service=Gedanchies%20Rental" class="btn btn-sm btn-cta">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Millars -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="rent-card">
+          <div class="rent-image">
+            <img src="https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Millars">
+            <span class="rent-badge">Available</span>
+          </div>
+          <div class="rent-body">
+            <h4>Millars</h4>
+            <p>Millar machines and equipment available for rent for construction and grinding work.</p>
+            <div class="rent-footer">
+              <span class="rent-price">Contact for pricing</span>
+              <a href="{{ url_for('enquiry') }}?service=Millars%20Rental" class="btn btn-sm btn-cta">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Other Mason Items -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="rent-card">
+          <div class="rent-image">
+            <img src="static/images/rentals/Building Construction.jpeg" alt="Other Items">
+            <span class="rent-badge">Available</span>
+          </div>
+          <div class="rent-body">
+            <h4>Other Mason Items</h4>
+            <p>Various other mason-related rental items — tools, equipment, and materials.</p>
+            <div class="rent-footer">
+              <span class="rent-price">Contact for pricing</span>
+              <a href="{{ url_for('enquiry') }}?service=Other%20Mason%20Items%20Rental" class="btn btn-sm btn-cta">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rent-cta text-center mt-5" data-aos="fade-up">
+      <h3>Need materials for your project?</h3>
+      <p>Call us or send an enquiry — we'll arrange everything you need.</p>
+      <a href="tel:{{ business_phone_raw }}" class="btn btn-cta btn-lg me-2"><i class="bi bi-telephone me-2"></i>Call Now</a>
+      <a href="https://wa.me/{{ business_phone_raw }}?text=Hi%2C%20I%20want%20to%20rent%20construction%20materials." target="_blank" rel="noopener" class="btn btn-success btn-lg"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

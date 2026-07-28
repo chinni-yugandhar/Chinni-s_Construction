@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Services | Chinni's Construction{% endblock %}
+
+{% block content %}
+<section class="page-header"
+style="background-image: linear-gradient(rgba(10,20,30,.8), rgba(10,20,30,.85)), url('{{ url_for('static', filename='images/Servicee/servicess.jpeg') }}');">
+  <div class="container text-center">
+    <h1 data-aos="fade-up">Our Services</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Comprehensive construction and masonry solutions.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag">What We Offer</span>
+      <h2 class="section-title">Construction & Mason <span class="highlight">Services</span></h2>
+      <p class="section-subtitle mx-auto">From full home builds to specialized masonry — we deliver quality workmanship on every project.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- 1 BHK -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="service-card detailed">
+          <div class="service-icon"><i class="bi bi-house-door"></i></div>
+          <h4>1 BHK Construction</h4>
+          <p>Complete construction of 1 bedroom, hall, kitchen homes. Ideal for small families and rental properties.</p>
+          <ul class="service-features">
+            <li><i class="bi bi-check-circle"></i> Foundation to finishing</li>
+            <li><i class="bi bi-check-circle"></i> Smart space planning</li>
+            <li><i class="bi bi-check-circle"></i> Quality materials</li>
+          </ul>
+          <a href="{{ url_for('enquiry') }}" class="service-link">Get Quote <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- 2 BHK -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card detailed">
+          <div class="service-icon"><i class="bi bi-house"></i></div>
+          <h4>2 BHK Construction</h4>
+          <p>Spacious 2 BHK home construction with proper ventilation, strong structure, and modern design.</p>
+          <ul class="service-features">
+            <li><i class="bi bi-check-circle"></i> Full structural work</li>
+            <li><i class="bi bi-check-circle"></i> Plastering & flooring</li>
+            <li><i class="bi bi-check-circle"></i> Custom layout options</li>
+          </ul>
+          <a href="{{ url_for('enquiry') }}" class="service-link">Get Quote <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- 3 BHK -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card detailed">
+          <div class="service-icon"><i class="bi bi-building"></i></div>
+          <h4>3 BHK Construction</h4>
+          <p>Premium 3 BHK construction with modern architecture, superior finish, and durable build quality.</p>
+          <ul class="service-features">
+            <li><i class="bi bi-check-circle"></i> Premium construction</li>
+            <li><i class="bi bi-check-circle"></i> Modern layout design</li>
+            <li><i class="bi bi-check-circle"></i> High-end finishing</li>
+          </ul>
+          <a href="{{ url_for('enquiry') }}" class="service-link">Get Quote <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Compound Wall -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="service-card detailed">
+          <div class="service-icon"><i class="bi bi-bricks"></i></div>
+          <h4>Compound Wall</h4>
+          <p>Strong and durable compound wall construction for residential and commercial property boundaries.</p>
+          <ul class="service-features">
+            <li><i class="bi bi-check-circle"></i> Boundary walls</li>
+            <li><i class="bi bi-check-circle"></i> Pillar & wall work</li>
+            <li><i class="bi bi-check-circle"></i> Gate installation</li>
+          </ul>
+          <a href="{{ url_for('enquiry') }}" class="service-link">Get Quote <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Round Tank -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card detailed">
+          <div class="service-icon"><i class="bi bi-droplet"></i></div>
+          <h4>Round Tank</h4>
+          <p>Water storage round tank construction — leak-proof, strong, and built for long-term use.</p>
+          <ul class="service-features">
+            <li><i class="bi bi-check-circle"></i> Leak-proof construction</li>
+            <li><i class="bi bi-check-circle"></i> Various capacities</li>
+            <li><i class="bi bi-check-circle"></i> Durable build</li>
+          </ul>
+          <a href="{{ url_for('enquiry') }}" class="service-link">Get Quote <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- All Mason Work -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card detailed">
+          <div class="service-icon"><i class="bi bi-hammer"></i></div>
+          <h4>All Mason Work</h4>
+          <p>Every type of mason work — brickwork, blockwork, plastering, flooring, waterproofing, and repairs.</p>
+          <ul class="service-features">
+            <li><i class="bi bi-check-circle"></i> Brick & block work</li>
+            <li><i class="bi bi-check-circle"></i> Plastering & flooring</li>
+            <li><i class="bi bi-check-circle"></i> Repairs & renovation</li>
+          </ul>
+          <a href="{{ url_for('enquiry') }}" class="service-link">Get Quote <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-tag">How We Work</span>
+      <h2 class="section-title">Our <span class="highlight">Process</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3" data-aos="fade-up">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h5>Consultation</h5>
+          <p>We discuss your needs, visit the site, and understand your requirements.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h5>Quote & Plan</h5>
+          <p>We provide a detailed estimate and project timeline — no hidden costs.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h5>Construction</h5>
+          <p>Our skilled team executes the work with quality and precision.</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h5>Handover</h5>
+          <p>We deliver your completed project, ready for you to enjoy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ business_name }} - Professional contractor, mason, centering & ironwork specialist in {{ business_location }}. Quality construction services for homes, compound walls, tanks and more.">
+  <title>{% block title %}{{ business_name }}{% endblock %}</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- AOS animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <!-- ===== Sticky Navbar ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('home') }}">
+        <span class="brand-logo"><i class="bi bi-building-gear"></i></span>
+        <span class="brand-text">Chinni's<span class="accent">Construction</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('projects') }}">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('rent_materials') }}">Rent Materials</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-cta" href="{{ url_for('enquiry') }}"><i class="bi bi-send me-1"></i>Get Quote</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Page Content ===== -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Three circular photos with rainbow border -->
+      <div class="footer-team">
+        <div class="team-row">
+          <div class="team-member" data-aos="zoom-in">
+            <div class="rainbow-photo">
+              <img src="static/images/Team/yogi2.png">
+            </div>
+            <p class="team-name">Yugandhar</p>
+            <p class="team-role">Site Supervisor 1</p>
+          </div>
+          <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
+            <div class="rainbow-photo main-photo">
+              <img src="static/images/Team/prsard1.jpeg">
+            </div>
+            <p class="team-name">Durga Prasad</p>
+            <p class="team-role">Main Contractor</p>
+          </div>
+          <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
+            <div class="rainbow-photo">
+              <img src="static/images/Team/kallu2.png">
+            </div>
+            <p class="team-name">Kalyan</p>
+            <p class="team-role">Site Supervisor 2</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Chinni's Construction</h4>
+          <p>Trusted contractor, mason, centering & ironwork specialist. Building quality homes and structures for over 15 years.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/{{ business_phone_raw }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            <a href="tel:{{ business_phone_raw }}" aria-label="Call"><i class="bi bi-telephone"></i></a>
+            <a href="mailto:{{ business_email }}" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('rent_materials') }}">Rent Materials</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li>1 / 2 / 3 BHK Construction</li>
+            <li>Compound Walls</li>
+            <li>Round Tanks</li>
+            <li>All Mason Work</li>
+            <li>Material Rentals</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="bi bi-geo-alt"></i> {{ business_location }}</li>
+            <li><i class="bi bi-telephone"></i> <a href="tel:{{ business_phone_raw }}">{{ business_phone }}</a></li>
+            <li><i class="bi bi-envelope"></i> <a href="mailto:{{ business_email }}">{{ business_email }}</a></li>
+          </ul>
+          <p class="footer-note">For business purpose, contact us.<br>Anyone with work can call or text us.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> {{ business_name }}. All rights reserved loved by @chinni.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/{{ business_phone_raw }}?text=Hi%20Chinni%27s%20Construction%2C%20I%20have%20a%20work%20requirement." class="float-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true, offset: 80 });</script>
+  <!-- Custom JS -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

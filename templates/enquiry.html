@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Enquiry | Chinni's Construction{% endblock %}
+
+{% block content %}
+<section class="page-header" style="background-image: linear-gradient(rgba(10,20,30,.8),rgba(10,20,30,.85)), url('https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+  <div class="container text-center">
+    <h1 data-aos="fade-up">Get a Quote</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Tell us about your project and we'll get back to you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="form-card">
+          <h3 class="text-center">Project Enquiry Form</h3>
+          <p class="form-subtitle text-center">Fill in the details below and our team will contact you with a quote.</p>
+          <form id="enquiryForm" class="needs-validation" novalidate>
+            <input type="hidden" name="access_key" value="{{ web3forms_key }}">
+            <input type="hidden" name="subject" value="New Project Enquiry - Chinni's Construction Website">
+            <input type="hidden" name="from_name" value="Chinni's Construction Website">
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" name="name" class="form-control" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                <input type="tel" name="phone" class="form-control" required>
+                <div class="invalid-feedback">Please enter your phone number.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="your@email.com">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Location <span class="text-danger">*</span></label>
+                <input type="text" name="location" class="form-control" required placeholder="Your area / city">
+                <div class="invalid-feedback">Please enter your location.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Service Needed <span class="text-danger">*</span></label>
+                <select name="service_needed" class="form-select" id="serviceSelect" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option>1 BHK Construction</option>
+                  <option>2 BHK Construction</option>
+                  <option>3 BHK Construction</option>
+                  <option>Compound Wall</option>
+                  <option>Round Tank</option>
+                  <option>All Mason Work</option>
+                  <option>Centering Sticks Rental</option>
+                  <option>Iron Sheets Rental</option>
+                  <option>Boxes Rental</option>
+                  <option>Gedanchies Rental</option>
+                  <option>Millars Rental</option>
+                  <option>Other Mason Items Rental</option>
+                  <option>Other</option>
+                </select>
+                <div class="invalid-feedback">Please select a service.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Budget</label>
+                <select name="budget" class="form-select">
+                  <option value="" selected disabled>Select budget range</option>
+                  <option>Under ₹2,00,000</option>
+                  <option>₹2,00,000 - ₹5,00,000</option>
+                  <option>₹5,00,000 - ₹10,00,000</option>
+                  <option>₹10,00,000 - ₹20,00,000</option>
+                  <option>Above ₹20,00,000</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message <span class="text-danger">*</span></label>
+                <textarea name="message" class="form-control" rows="5" required placeholder="Describe your project in detail — size, timeline, special requirements, etc."></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-cta btn-lg w-100" id="submitBtn"><i class="bi bi-send me-2"></i>Submit Enquiry</button>
+              </div>
+            </div>
+            <div id="formMessage" class="form-message mt-3"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+<script>
+  // Pre-fill service from URL query param (e.g. ?service=Centering Sticks Rental)
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service');
+    if (service) {
+      const select = document.getElementById('serviceSelect');
+      for (const opt of select.options) {
+        if (opt.value === service) { opt.selected = true; break; }
+      }
+    }
+  })();
+</script>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us | Chinni's Construction{% endblock %}
+
+{% block content %}
+<section class="page-header" style="background-image: linear-gradient(rgba(10,20,30,.8),rgba(10,20,30,.85)), url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+  <div class="container text-center">
+    <h1 data-aos="fade-up">Contact Us</h1>
+    <p data-aos="fade-up" data-aos-delay="100">We're ready to help with your construction needs.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Contact Info -->
+      <div class="col-lg-5" data-aos="fade-right">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's <span class="highlight">Talk</span></h2>
+        <p class="section-subtitle">For business purpose, contact us. Anyone with work can call or text us — we're always happy to help.</p>
+
+        <div class="contact-info-list mt-4">
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+            <div><h5>Location</h5><p>{{ business_location }}</p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+            <div><h5>Phone</h5><p><a href="tel:{{ business_phone_raw }}">{{ business_phone }}</a></p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+            <div><h5>Email</h5><p><a href="mailto:{{ business_email }}">{{ business_email }}</a></p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-clock"></i></div>
+            <div><h5>Working Hours</h5><p>Mon - Sat: 8:00 AM - 7:00 PM</p></div>
+          </div>
+        </div>
+
+        <!-- Quick action buttons -->
+        <div class="quick-actions mt-4">
+          <a href="https://wa.me/{{ business_phone_raw }}?text=Hi%20Chinni%27s%20Construction%2C%20I%20have%20a%20work%20requirement." target="_blank" rel="noopener" class="btn btn-success btn-lg w-100 mb-2"><i class="bi bi-whatsapp me-2"></i>WhatsApp Us</a>
+          <a href="tel:{{ business_phone_raw }}" class="btn btn-cta btn-lg w-100 mb-2"><i class="bi bi-telephone me-2"></i>Call Now</a>
+          <a href="mailto:{{ business_email }}" class="btn btn-outline-dark btn-lg w-100"><i class="bi bi-envelope me-2"></i>Email Us</a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="form-card">
+          <h3>Send Us a Message</h3>
+          <p class="form-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
+          <form id="contactForm" class="needs-validation" novalidate>
+            <input type="hidden" name="access_key" value="{{ web3forms_key }}">
+            <input type="hidden" name="subject" value="New Contact Message - Chinni's Construction Website">
+            <input type="hidden" name="from_name" value="Chinni's Construction Website">
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" name="name" class="form-control" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                <input type="tel" name="phone" class="form-control" required>
+                <div class="invalid-feedback">Please enter your phone number.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Location</label>
+                <input type="text" name="location" class="form-control" placeholder="Your area / city">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Service Needed <span class="text-danger">*</span></label>
+                <select name="service_needed" class="form-select" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option>1 BHK Construction</option>
+                  <option>2 BHK Construction</option>
+                  <option>3 BHK Construction</option>
+                  <option>Compound Wall</option>
+                  <option>Round Tank</option>
+                  <option>All Mason Work</option>
+                  <option>Rent Materials</option>
+                  <option>Other</option>
+                </select>
+                <div class="invalid-feedback">Please select a service.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Budget</label>
+                <input type="text" name="budget" class="form-control" placeholder="e.g. ₹5,00,000">
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message <span class="text-danger">*</span></label>
+                <textarea name="message" class="form-control" rows="4" required placeholder="Tell us about your project..."></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-cta btn-lg w-100" id="submitBtn"><i class="bi bi-send me-2"></i>Send Message</button>
+              </div>
+            </div>
+            <div id="formMessage" class="form-message mt-3"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}
