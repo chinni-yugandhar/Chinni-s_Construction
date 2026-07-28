@@ -153,36 +153,6 @@ Replace the Pexels placeholder image URLs in `templates/projects.html` with your
 
 ---
 
-## Deployment
-
-### Option 1: Render (Recommended — Free Tier)
-
-1. Push this project to a GitHub repository.
-2. Go to [https://render.com](https://render.com) and create a new **Web Service**.
-3. Connect your GitHub repo.
-4. Settings:
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `gunicorn app:app`
-   - **Environment Variable:** `WEB3FORMS_ACCESS_KEY` = your key
-5. Deploy. Render gives you a free URL like `https://chinnis-construction.onrender.com`.
-
-### Option 2: PythonAnywhere
-
-1. Create an account at [https://pythonanywhere.com](https://pythonanywhere.com).
-2. Upload your code or pull from GitHub.
-3. Go to the **Web** tab, create a new Flask app.
-4. Set the working directory and point WSGI to `app.py`.
-5. Add `WEB3FORMS_ACCESS_KEY` in the Environment Variables section.
-
-### Option 3: Railway
-
-1. Go to [https://railway.app](https://railway.app).
-2. New Project → Deploy from GitHub.
-3. Railway auto-detects Flask. Set the start command to `gunicorn app:app`.
-4. Add `WEB3FORMS_ACCESS_KEY` as a variable.
-
----
-
 ## Features
 
 - Fully responsive, mobile-first design
